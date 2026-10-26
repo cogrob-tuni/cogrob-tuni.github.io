@@ -18,6 +18,7 @@ function renderProjects(projects) {
 
   projectList.innerHTML = projects.map((project) => `
     <article class="project-card">
+      ${project.image ? `<img class="project-image" src="${escapeHtml(new URL(project.image, project.url).href)}" alt="">` : ''}
       <div>
         <span class="project-label">${escapeHtml(project.year || 'Research project')}</span>
         <h3>${escapeHtml(project.title)}</h3>
