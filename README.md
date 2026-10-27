@@ -20,7 +20,26 @@ The landing page updates automatically:
 - Daily at 03:17 UTC
 - Manually from **Actions → Deploy landing page → Run workflow**
 
-For a project to appear, its public repository must have a `website` branch containing valid `website/site.json` metadata.
+After adding or changing a project's `website/site.json`, run **Actions → Deploy landing page → Run workflow** to refresh the published project list immediately. The scheduled run is only daily.
+
+For a project to appear, a public repository must host its website on a `website` branch containing valid `website/site.json` metadata. This hosting repository does not need to contain source code: it can be a publication-only repository. The optional `repository` field adds a **Source code** link; omit it when no code is available.
+
+`schemaVersion` identifies the metadata format. The current format is version `1`. Projects using another version are ignored until the landing page supports that format.
+
+Required fields:
+
+```json
+{
+  "schemaVersion": 1,
+  "published": true,
+  "title": "Project title",
+  "description": "Short description.",
+  "authors": ["Author Name"],
+  "url": "https://cogrob-tuni.github.io/repository-name/"
+}
+```
+
+Optional fields include `repository`, `image`, `year`, and `order`.
 
 To trigger an update manually:
 
