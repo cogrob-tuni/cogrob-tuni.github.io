@@ -25,7 +25,7 @@ function renderProjects(projects) {
         <p>${escapeHtml(project.description)}</p>
         <small>${escapeHtml(project.authors.join(' · '))}</small>
         <div class="project-links">
-          <a class="button button-small" href="${escapeHtml(project.url)}">View project ↗</a>
+          <a class="button button-small" href="${escapeHtml(project.url)}">View Paper ↗</a>
           ${project.repository ? `<a class="project-source" href="${escapeHtml(project.repository)}">Source code ↗</a>` : ''}
         </div>
       </div>
